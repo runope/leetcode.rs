@@ -192,8 +192,8 @@ async fn insert_readme_file(
         .write_all(
             format!(
                 "   <tr>
-        <td>{}</td>
-        <td><a href=\"./src/solutions/{}\"> {}</a></td>
+        <td>{:04}</td>
+        <td><a href=\"./src/solution_sets/{}\"> {}</a></td>
         <td>{}</td>
     </tr>\n",
                 id, solution_name, title_slug, difficulty

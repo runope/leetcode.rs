@@ -9,6 +9,11 @@
   <tbody>
    <tr>
         <td>0001</td>
-        <td><a href="./src/solution_sets/s0001_two_sum"> two-sum</a></td>
+        <td><a href="./src/solution_sets/s0001_two_sum.rs"> two-sum</a></td>
         <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0172</td>
+        <td><a href="./src/solution_sets/s0172_factorial_trailing_zeroes.rs"> factorial-trailing-zeroes</a></td>
+        <td>Medium</td>
     </tr>

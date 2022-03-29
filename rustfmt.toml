@@ -1,0 +1,7 @@
+unstable_features = true
+enum_discrim_align_threshold = 30
+struct_field_align_threshold = 30
+format_strings = true
+imports_granularity = "Crate"
+reorder_impl_items = true
+group_imports = "StdExternalCrate"

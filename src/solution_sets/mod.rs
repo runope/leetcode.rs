@@ -1,1 +1,2 @@
 mod s0496_next_greater_element_i;
+mod s1365_how_many_numbers_are_smaller_than_the_current_number;

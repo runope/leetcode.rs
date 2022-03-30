@@ -7,10 +7,10 @@ When solved a problem, you can solve $id. The problem will move to the solution_
 <img src="./img/solved.png">
 
 ## usage
-cargo run -- -h, --help Print help information
-cargo run -- -i, --id <id>       generate problem by a frontend problem <id>
-cargo run -- -r, --random        generate a random problem
-cargo run -- -s, --solve <id>    solve the problem's <id>
+cargo run -- -h, --help Print help information <br>
+cargo run -- -i, --id <id>       generate problem by a frontend problem <id> <br>
+cargo run -- -r, --random        generate a random problem <br>
+cargo run -- -s, --solve <id>    solve the problem's <id> <br>
 
 ## Resolved
 <table id="leetcode" class="table-auto">

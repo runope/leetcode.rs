@@ -30,6 +30,7 @@
  * Follow up: Could you write a solution that works in logarithmic time complexity?
  * 
  */
+#[allow(dead_code)]
  pub struct Solution {}
 
  // problem: https://leetcode.com/problems/factorial-trailing-zeroes/
@@ -37,9 +38,21 @@
  
  // submission codes start here
  
+ #[allow(dead_code)]
  impl Solution {
     pub fn trailing_zeroes(n: i32) -> i32 {
-        0
+        let mut ret = 0;
+        let mut n = n;
+        
+        if n <5 {
+            return 0;
+        }
+
+        while n >= 5 {
+            ret += n / 5;
+            n /= 5;
+        }
+        ret
     }
 }
  
@@ -51,6 +64,11 @@
  
      #[test]
      fn test_172() {
+            assert_eq!(5, Solution::trailing_zeroes(1));
+            assert_eq!(3, Solution::trailing_zeroes(0));
+            assert_eq!(0, Solution::trailing_zeroes(0));
+            assert_eq!(10, Solution::trailing_zeroes(2));
+            assert_eq!(30, Solution::trailing_zeroes(7));
      }
  }
  

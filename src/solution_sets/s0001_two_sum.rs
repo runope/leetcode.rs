@@ -32,6 +32,7 @@
  *  
  * Follow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?
  */
+#[allow(dead_code)]
 pub struct Solution {}
 
 // problem: https://leetcode.com/problems/two-sum/
@@ -40,17 +41,21 @@ pub struct Solution {}
 // submission codes start here
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         use std::collections::HashMap;
         let mut map: HashMap<i32, i32> = HashMap::new();
 
-        // for n in nums.iter().enumerate() {
-        //     let pick_val = target - n.1;
-        //     if let Some(i) = map.get(&complement) {
-        //         return vec![*i, n.0 as i32];
-        //     }
-        //     map.insert(n.1, n.0 as i32);
-        // }
+        for n in nums.iter().enumerate() {
+            let pick_val = target - n.1;
+            if let Some(pick_index) = map.get(&n.1) {
+                return vec![*pick_index as i32, n.0 as i32];
+            }
+
+            map.insert(pick_val, n.0 as i32);
+        }
+
+        vec![]
     }
 }
 

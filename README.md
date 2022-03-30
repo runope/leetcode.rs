@@ -17,3 +17,8 @@
         <td><a href="./src/solution_sets/s0172_factorial_trailing_zeroes.rs"> factorial-trailing-zeroes</a></td>
         <td>Medium</td>
     </tr>
+   <tr>
+        <td>1925</td>
+        <td><a href="./src/solution_sets/s1925_count_square_sum_triples.rs"> count-square-sum-triples</a></td>
+        <td>Easy</td>
+    </tr>

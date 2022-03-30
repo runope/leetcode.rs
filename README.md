@@ -1,3 +1,18 @@
+# LeetCode.rs
+Download leetcode problem to local and generate the appropriate rust file. You can code directly locally and enjoy code completion.
+
+Download problems which contains questions, samples, descriptions, and code templete in the problem_sets folder
+<img src="./img/problem.png">
+When solved a problem, you can solve $id. The problem will move to the solution_sets folder, and README.md will add the problem automatically.
+<img src="./img/solved.png">
+
+## usage
+cargo run -- -h, --help Print help information
+cargo run -- -i, --id <id>       generate problem by a frontend problem <id>
+cargo run -- -r, --random        generate a random problem
+cargo run -- -s, --solve <id>    solve the problem's <id>
+
+## Resolved
 <table id="leetcode" class="table-auto">
   <thead>
     <tr>

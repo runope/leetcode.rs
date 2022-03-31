@@ -1,1 +1,2 @@
 mod p0756_pyramid_transition_matrix;
+mod p0027_remove_element;

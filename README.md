@@ -40,3 +40,8 @@ cargo run test <test_id>         test algorithm
         <td><a href="./src/solution_sets/s1925_count_square_sum_triples.rs"> count-square-sum-triples</a></td>
         <td>Easy</td>
     </tr>
+   <tr>
+        <td>0283</td>
+        <td><a href="./src/solution_sets/s0283_move_zeroes.rs"> move-zeroes</a></td>
+        <td>Easy</td>
+    </tr>

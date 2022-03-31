@@ -50,10 +50,13 @@ impl<'a> Cli<'a> {
             .get_matches();
 
         if let Some(problems) = Problems::new().await {
+            println!("async block");
             PROBLEMS.set(problems).unwrap();
         } else {
             panic!("Failed to init Problems");
         }
+
+        println!("after async");
 
         if let Some(id) = matches.value_of("id") {
             let id_number = id

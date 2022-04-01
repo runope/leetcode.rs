@@ -7,7 +7,7 @@
  * Do not allocate extra space for another array. You must do this by modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> with O(1) extra memory.
  * Custom Judge:
  * The judge will test your solution with the following code:
- * 
+ *
  * int[] nums = [...]; // Input array
  * int val = ...; // Value to remove
  * int[] expectedNums = [...]; // The expected answer with correct length.
@@ -18,55 +18,93 @@
  * for (int i = 0; i < actualLength; i++) {
  *     assert nums[i] == expectedNums[i];
  * }
- * 
+ *
  * If all assertions pass, then your solution will be accepted.
  *  
  * Example 1:
- * 
+ *
  * Input: nums = [3,2,2,3], val = 3
  * Output: 2, nums = [2,2,_,_]
  * Explanation: Your function should return k = 2, with the first two elements of nums being 2.
  * It does not matter what you leave beyond the returned k (hence they are underscores).
- * 
+ *
  * Example 2:
- * 
+ *
  * Input: nums = [0,1,2,2,3,0,4,2], val = 2
  * Output: 5, nums = [0,1,4,0,3,_,_,_]
  * Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
  * Note that the five elements can be returned in any order.
  * It does not matter what you leave beyond the returned k (hence they are underscores).
- * 
+ *
  *  
  * Constraints:
- * 
+ *
  * 	0 <= nums.length <= 100
  * 	0 <= nums[i] <= 50
  * 	0 <= val <= 100
- * 
+ *
  */
 #[allow(dead_code)]
- pub struct Solution {}
+pub struct Solution {}
 
- // problem: https://leetcode.com/problems/remove-element/
- // discuss: https://leetcode.com/problems/remove-element/discuss/?currentPage=1&orderBy=most_votes&query=
- 
- // submission codes start here
- 
- #[allow(dead_code)]
- impl Solution {
+// problem: https://leetcode.com/problems/remove-element/
+// discuss: https://leetcode.com/problems/remove-element/discuss/?currentPage=1&orderBy=most_votes&query=
+
+// submission codes start here
+
+#[allow(dead_code)]
+impl Solution {
     pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
-        0
+        if nums.len() == 0 {
+            return 0;
+        } else if nums.len() == 1 {
+            if nums[0] == val {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+
+        let mut head = 0;
+        let mut tail = nums.len() - 1;
+
+        while head <= tail {
+            while nums[head] != val {
+                if head < tail {
+                    head += 1;
+                } else {
+                    return (head + 1) as i32;
+                }
+            }
+
+            while nums[tail] == val {
+                if tail == head {
+                    return head as i32;
+                }
+                tail -= 1;
+            }
+
+            nums.swap(head, tail);
+        }
+
+        return head as i32;
     }
 }
- 
- // submission codes end
- 
- #[cfg(test)]
- mod tests {
-     use super::*;
- 
-     #[test]
-     fn test_27() {
-     }
- }
- 
+
+// submission codes end
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_27() {
+        // assert_eq!(0, Solution::remove_element(&mut vec![], 0));
+        // assert_eq!(1, Solution::remove_element(&mut vec![2], 3));
+        // assert_eq!(0, Solution::remove_element(&mut vec![3,3], 3));
+        assert_eq!(3, Solution::remove_element(&mut vec![3, 2, 2, 3], 3));
+        // assert_eq!(1, Solution::remove_element(&mut vec![4,5], 4));
+        // let test_vec = &mut vec![3,3];
+        // assert_eq!(0, Solution::remove_element(test_vec, 3));
+    }
+}

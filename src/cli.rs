@@ -9,6 +9,7 @@ use tokio::{
     fs::{self, File},
     io::{AsyncBufReadExt, AsyncWriteExt, BufReader},
 };
+use tracing::info;
 
 use crate::{
     fetch::Problems,
@@ -44,19 +45,24 @@ impl<'a> Cli<'a> {
             .version("0.1")
             .author("kh")
             .about("Fastly download problems from Leetcode to local and generate rust templates")
-            .arg(arg!(-i --id <id>"generate problem by a frontend problem <id>").takes_value(true).required(false))
+            .arg(
+                arg!(-i --id <id>"generate problem by a frontend problem <id>")
+                    .takes_value(true)
+                    .required(false),
+            )
             .arg(arg!(-r --random "generate a random problem").takes_value(false))
-            .arg(arg!(-s --solve <id> "solve the problem's <id>").takes_value(true).required(false))
+            .arg(
+                arg!(-s --solve <id> "solve the problem's <id>")
+                    .takes_value(true)
+                    .required(false),
+            )
             .get_matches();
 
         if let Some(problems) = Problems::new().await {
-            println!("async block");
             PROBLEMS.set(problems).unwrap();
         } else {
             panic!("Failed to init Problems");
         }
-
-        println!("after async");
 
         if let Some(id) = matches.value_of("id") {
             let id_number = id

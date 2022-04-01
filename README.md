@@ -6,6 +6,11 @@ Download problems which contains questions, samples, descriptions, and code temp
 When solved a problem, you can solve $id. The problem will move to the solution_sets folder, and README.md will add the problem automatically.
 <img src="./img/solved.png">
 
+## TDD
+Create tests by test-case, you can enjoy TDD in local
+<img src="./img/tests.png">
+<img src="./img/tdd.png">
+
 ## usage
 ```shell
 cargo run -- -h, --help          Print help information
@@ -44,4 +49,19 @@ cargo run test <test_id>         test algorithm
         <td>0283</td>
         <td><a href="./src/solution_sets/s0283_move_zeroes.rs"> move-zeroes</a></td>
         <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0027</td>
+        <td><a href="./src/solution_sets/s0027_remove_element.rs"> remove-element</a></td>
+        <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0026</td>
+        <td><a href="./src/solution_sets/s0026_remove_duplicates_from_sorted_array.rs"> remove-duplicates-from-sorted-array</a></td>
+        <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0080</td>
+        <td><a href="./src/solution_sets/s0080_remove_duplicates_from_sorted_array_ii.rs"> remove-duplicates-from-sorted-array-ii</a></td>
+        <td>Medium</td>
     </tr>

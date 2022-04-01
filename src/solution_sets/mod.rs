@@ -1,4 +1,7 @@
 mod s0001_two_sum;
+mod s0027_remove_element;
 mod s0172_factorial_trailing_zeroes;
-mod s1925_count_square_sum_triples;
 mod s0283_move_zeroes;
+mod s1925_count_square_sum_triples;
+mod s0026_remove_duplicates_from_sorted_array;
+mod s0080_remove_duplicates_from_sorted_array_ii;

@@ -9,7 +9,7 @@ use tokio::{
     fs::{self, File},
     io::{AsyncBufReadExt, AsyncWriteExt, BufReader},
 };
-use tracing::info;
+use tracing::{info, warn};
 
 use crate::{
     fetch::Problems,
@@ -35,6 +35,10 @@ impl<'a> Cli<'a> {
     pub async fn run(&mut self) -> Result<()> {
         info!("Running");
 
+        let problem_handle = tokio::spawn(async {
+            Problems::new().await
+        });
+
         let content = fs::read_to_string("./src/problem_sets/mod.rs")
             .await
             .unwrap();
@@ -58,10 +62,17 @@ impl<'a> Cli<'a> {
             )
             .get_matches();
 
-        if let Some(problems) = Problems::new().await {
+        if let Some(problems) = problem_handle.await? {
             PROBLEMS.set(problems).unwrap();
         } else {
             panic!("Failed to init Problems");
+        }
+
+        if let Some(id) = matches.value_of("solve") {
+            let id_number = id
+                .parse::<u32>()
+                .unwrap_or_else(|_| panic!("not a number: {}", id));
+            self.deal_solving(id_number).await;
         }
 
         if let Some(id) = matches.value_of("id") {
@@ -81,13 +92,6 @@ impl<'a> Cli<'a> {
             let id = generate_random_id(&initialized_id);
             self.deal_problem(id).await;
             println!("Generate random problem: {}", &id);
-        }
-
-        if let Some(id) = matches.value_of("solve") {
-            let id_number = id
-                .parse::<u32>()
-                .unwrap_or_else(|_| panic!("not a number: {}", id));
-            self.deal_solving(id_number).await;
         }
 
         Ok(())

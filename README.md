@@ -65,3 +65,13 @@ cargo run test <test_id>         test algorithm
         <td><a href="./src/solution_sets/s0080_remove_duplicates_from_sorted_array_ii.rs"> remove-duplicates-from-sorted-array-ii</a></td>
         <td>Medium</td>
     </tr>
+   <tr>
+        <td>0075</td>
+        <td><a href="./src/solution_sets/s0075_sort_colors.rs"> sort-colors</a></td>
+        <td>Medium</td>
+    </tr>
+   <tr>
+        <td>0215</td>
+        <td><a href="./src/solution_sets/s0215_kth_largest_element_in_an_array.rs"> kth-largest-element-in-an-array</a></td>
+        <td>Medium</td>
+    </tr>

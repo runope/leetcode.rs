@@ -52,29 +52,36 @@
  impl Solution {
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         
-        if nums2.len() == 0 { return ;}
-        if nums1.len() == 0 {
-            for i in 0..nums2.len() {
-                nums1[i] = nums2[i];
+        if n == 0 { return ;}
+        if m == 0 {
+            for i in 0..n {
+                nums1[i as usize] = nums2[i as usize];
             }
             return ;
         }
 
-        let mut tmp = vec![];
-        let (mut i, mut j) = (0, 0);
+        let mut index = (m + n) as usize;
+        let (mut i, mut j) = ((m) as usize, (n) as usize);
 
-        while i < nums1.len() || j < nums2.len() {
-            if nums1[i] <= nums2[j] {
-                tmp.push(nums1[i]);
-                i += 1;
-            } else {
-                tmp.push(nums2[j]);
-                j += 1;
+        while index != 0 {
+            index -= 1;
+
+            if i == 0 {
+                j -= 1;
+                nums1[index] = nums2[j];
+            } else if j == 0 {
+                i -= 1;
+                nums1[index] = nums1[i];       
+            }else {
+                if nums1[i - 1] > nums2[j - 1] {
+                    i -= 1;
+                    nums1[index] = nums1[i];
+                } else {
+                    j -= 1;
+                    nums1[index] = nums2[j];
+                }
             }
         }
-
-
-
     }
 }
  

@@ -185,7 +185,11 @@ impl<'a> Cli<'a> {
                 mod_lines.push(line);
             }
         }
-        fs::write(mod_file, mod_lines.join("\n")).await.unwrap();
+
+        let  mut mod_str = mod_lines.join("\n");
+        mod_str.push_str("\n");
+
+        fs::write(mod_file, mod_str).await.unwrap();
         // insert into solution_sets/mod.rs
         insert_mod_file("./src/solution_sets/mod.rs", &solution_name).await;
         insert_readme_file(id, solution_name, problem.title_slug, problem.difficulty).await;

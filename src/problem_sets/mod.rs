@@ -1,2 +1,1 @@
 mod p0756_pyramid_transition_matrix;
-mod p0088_merge_sorted_array;

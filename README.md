@@ -75,3 +75,13 @@ cargo run test <test_id>         test algorithm
         <td><a href="./src/solution_sets/s0215_kth_largest_element_in_an_array.rs"> kth-largest-element-in-an-array</a></td>
         <td>Medium</td>
     </tr>
+   <tr>
+        <td>0088</td>
+        <td><a href="./src/solution_sets/s0088_merge_sorted_array.rs"> merge-sorted-array</a></td>
+        <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0167</td>
+        <td><a href="./src/solution_sets/s0167_two_sum_ii_input_array_is_sorted.rs"> two-sum-ii-input-array-is-sorted</a></td>
+        <td>Medium</td>
+    </tr>

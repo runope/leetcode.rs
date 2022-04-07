@@ -7,3 +7,5 @@ mod s0026_remove_duplicates_from_sorted_array;
 mod s0080_remove_duplicates_from_sorted_array_ii;
 mod s0075_sort_colors;
 mod s0215_kth_largest_element_in_an_array;
+mod s0088_merge_sorted_array;
+mod s0167_two_sum_ii_input_array_is_sorted;

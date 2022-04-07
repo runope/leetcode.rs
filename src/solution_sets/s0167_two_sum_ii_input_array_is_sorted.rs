@@ -45,7 +45,21 @@
  #[allow(dead_code)]
  impl Solution {
     pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
-        vec![]
+        let mut left = (0, target - numbers[0]);
+        let mut right = numbers.len() - 1;
+
+        while left.0 < right {
+            if numbers[right] > left.1 {
+                right -= 1;
+            } else if numbers[right] < left.1 {
+                left.0 += 1;
+                left.1 = target - numbers[left.0];
+            } else {
+                return vec![(left.0 + 1) as i32, (right + 1) as i32];
+            }
+        }
+
+        vec![(left.0 + 1) as i32, (right + 1) as i32]
     }
 }
  
@@ -57,6 +71,7 @@
  
      #[test]
      fn test_167() {
+         Solution::two_sum(vec![2,7,11,15], 9);
      }
  }
  

@@ -85,3 +85,23 @@ cargo run test <test_id>         test algorithm
         <td><a href="./src/solution_sets/s0167_two_sum_ii_input_array_is_sorted.rs"> two-sum-ii-input-array-is-sorted</a></td>
         <td>Medium</td>
     </tr>
+   <tr>
+        <td>0011</td>
+        <td><a href="./src/solution_sets/s0011_container_with_most_water.rs"> container-with-most-water</a></td>
+        <td>Medium</td>
+    </tr>
+   <tr>
+        <td>0209</td>
+        <td><a href="./src/solution_sets/s0209_minimum_size_subarray_sum.rs"> minimum-size-subarray-sum</a></td>
+        <td>Medium</td>
+    </tr>
+   <tr>
+        <td>0232</td>
+        <td><a href="./src/solution_sets/s0232_implement_queue_using_stacks.rs"> implement-queue-using-stacks</a></td>
+        <td>Easy</td>
+    </tr>
+   <tr>
+        <td>0206</td>
+        <td><a href="./src/solution_sets/s0206_reverse_linked_list.rs"> reverse-linked-list</a></td>
+        <td>Easy</td>
+    </tr>

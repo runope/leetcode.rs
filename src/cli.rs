@@ -9,7 +9,7 @@ use tokio::{
     fs::{self, File},
     io::{AsyncBufReadExt, AsyncWriteExt, BufReader},
 };
-use tracing::{info, warn};
+use tracing::{info};
 
 use crate::{
     fetch::Problems,

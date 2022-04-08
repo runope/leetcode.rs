@@ -9,3 +9,7 @@ mod s0075_sort_colors;
 mod s0215_kth_largest_element_in_an_array;
 mod s0088_merge_sorted_array;
 mod s0167_two_sum_ii_input_array_is_sorted;
+mod s0011_container_with_most_water;
+mod s0209_minimum_size_subarray_sum;
+mod s0232_implement_queue_using_stacks;
+mod s0206_reverse_linked_list;

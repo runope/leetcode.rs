@@ -72,7 +72,8 @@
  
  #[cfg(test)]
  mod tests {
-     use super::*;
+    #[allow(unused_imports)]
+    use super::*;
  
      #[test]
      fn test_215() {

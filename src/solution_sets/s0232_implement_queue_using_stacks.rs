@@ -3,20 +3,20 @@
  *
  * Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
  * Implement the MyQueue class:
- * 
+ *
  * 	void push(int x) Pushes element x to the back of the queue.
  * 	int pop() Removes the element from the front of the queue and returns it.
  * 	int peek() Returns the element at the front of the queue.
  * 	boolean empty() Returns true if the queue is empty, false otherwise.
- * 
+ *
  * Notes:
- * 
+ *
  * 	You must use only standard operations of a stack, which means only push to top, peek/pop from top, size, and is empty operations are valid.
  * 	Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.
- * 
+ *
  *  
  * Example 1:
- * 
+ *
  * Input
  * ["MyQueue", "push", "push", "peek", "pop", "empty"]
  * [[], [1], [2], [], [], []]
@@ -29,24 +29,24 @@
  * myQueue.peek(); // return 1
  * myQueue.pop(); // return 1, queue is [2]
  * myQueue.empty(); // return false
- * 
+ *
  *  
  * Constraints:
- * 
+ *
  * 	1 <= x <= 9
  * 	At most 100 calls will be made to push, pop, peek, and empty.
  * 	All the calls to pop and peek are valid.
- * 
+ *
  *  
  * Follow-up: Can you implement the queue such that each operation is <a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">amortized</a> O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer.
- * 
+ *
  */
 #[allow(dead_code)]
 pub struct Solution {}
 
 // problem: https://leetcode.com/problems/implement-queue-using-stacks/
 // discuss: https://leetcode.com/problems/implement-queue-using-stacks/discuss/?currentPage=1&orderBy=most_votes&query=
- 
+
 // submission codes start here
 
 #[allow(dead_code)]
@@ -55,22 +55,24 @@ struct MyQueue {
     stack2: Vec<i32>,
 }
 
-
-/** 
+/**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 impl MyQueue {
     #[allow(unused)]
     fn new() -> Self {
-        MyQueue { stack1: vec![], stack2: vec![] }
+        MyQueue {
+            stack1: vec![],
+            stack2: vec![],
+        }
     }
-    
+
     #[allow(unused)]
     fn push(&mut self, x: i32) {
         self.stack1.push(x);
     }
-    
+
     #[allow(unused)]
     fn pop(&mut self) -> Option<i32> {
         if self.stack2.is_empty() {
@@ -81,7 +83,7 @@ impl MyQueue {
 
         self.stack2.pop()
     }
-    
+
     #[allow(unused)]
     fn peek(&self) -> Option<i32> {
         if let Some(x) = self.stack2.last() {
@@ -90,7 +92,7 @@ impl MyQueue {
             return None;
         }
     }
-    
+
     #[allow(unused)]
     fn empty(&self) -> bool {
         if self.stack1.is_empty() && self.stack2.is_empty() {
@@ -111,10 +113,10 @@ impl MyQueue {
  */
 
 // submission codes end
- 
+
 #[cfg(test)]
 mod tests {
-#[allow(unused_imports)]
+    #[allow(unused_imports)]
     use super::*;
 
     #[test]
@@ -127,4 +129,3 @@ mod tests {
         my_queue.empty(); // return false
     }
 }
- 

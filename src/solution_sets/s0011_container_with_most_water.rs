@@ -11,26 +11,26 @@
  * Input: height = [1,8,6,2,5,4,8,3,7]
  * Output: 49
  * Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
- * 
+ *
  * Example 2:
- * 
+ *
  * Input: height = [1,1]
  * Output: 1
- * 
+ *
  *  
  * Constraints:
- * 
+ *
  * 	n == height.length
  * 	2 <= n <= 10^5
  * 	0 <= height[i] <= 10^4
- * 
+ *
  */
 #[allow(dead_code)]
 pub struct Solution {}
 
 // problem: https://leetcode.com/problems/container-with-most-water/
 // discuss: https://leetcode.com/problems/container-with-most-water/discuss/?currentPage=1&orderBy=most_votes&query=
- 
+
 // submission codes start here
 
 #[allow(dead_code)]
@@ -56,14 +56,12 @@ impl Solution {
 }
 
 // submission codes end
- 
+
 #[cfg(test)]
 mod tests {
-#[allow(unused_imports)]
+    #[allow(unused_imports)]
     use super::*;
 
     #[test]
-    fn test_11() {
-    }
+    fn test_11() {}
 }
- 

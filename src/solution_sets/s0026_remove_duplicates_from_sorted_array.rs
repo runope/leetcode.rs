@@ -51,7 +51,6 @@ pub struct Solution {}
 #[allow(dead_code)]
 impl Solution {
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
-
         if nums.is_empty() {
             return 0;
         } else if nums.len() == 1 {

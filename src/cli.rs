@@ -9,7 +9,7 @@ use tokio::{
     fs::{self, File},
     io::{AsyncBufReadExt, AsyncWriteExt, BufReader},
 };
-use tracing::{info};
+use tracing::info;
 
 use crate::{
     fetch::Problems,
@@ -35,9 +35,7 @@ impl<'a> Cli<'a> {
     pub async fn run(&mut self) -> Result<()> {
         info!("Running");
 
-        let problem_handle = tokio::spawn(async {
-            Problems::new().await
-        });
+        let problem_handle = tokio::spawn(async { Problems::new().await });
 
         let content = fs::read_to_string("./src/problem_sets/mod.rs")
             .await
@@ -186,7 +184,7 @@ impl<'a> Cli<'a> {
             }
         }
 
-        let  mut mod_str = mod_lines.join("\n");
+        let mut mod_str = mod_lines.join("\n");
         mod_str.push_str("\n");
 
         fs::write(mod_file, mod_str).await.unwrap();

@@ -102,6 +102,6 @@ cargo run test <test_id>         test algorithm
     </tr>
    <tr>
         <td>0206</td>
-        <td><a href="./src/solution_sets/s0206_reverse_linked_list.rs"> reverse-linked-list</a></td>
+        <td><a href="./src/solution_sets/s0206_reverse_linked_list.rs"> reverse-linked-list[*]</a></td>
         <td>Easy</td>
     </tr>

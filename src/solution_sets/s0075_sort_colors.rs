@@ -6,36 +6,36 @@
  * You must solve this problem without using the library's sort function.
  *  
  * Example 1:
- * 
+ *
  * Input: nums = [2,0,2,1,1,0]
  * Output: [0,0,1,1,2,2]
- * 
+ *
  * Example 2:
- * 
+ *
  * Input: nums = [2,0,1]
  * Output: [0,1,2]
- * 
+ *
  *  
  * Constraints:
- * 
+ *
  * 	n == nums.length
  * 	1 <= n <= 300
  * 	nums[i] is either 0, 1, or 2.
- * 
+ *
  *  
  * Follow up: Could you come up with a one-pass algorithm using only constant extra space?
- * 
+ *
  */
 #[allow(dead_code)]
- pub struct Solution {}
+pub struct Solution {}
 
- // problem: https://leetcode.com/problems/sort-colors/
- // discuss: https://leetcode.com/problems/sort-colors/discuss/?currentPage=1&orderBy=most_votes&query=
- 
- // submission codes start here
- 
- #[allow(dead_code)]
- impl Solution {
+// problem: https://leetcode.com/problems/sort-colors/
+// discuss: https://leetcode.com/problems/sort-colors/discuss/?currentPage=1&orderBy=most_votes&query=
+
+// submission codes start here
+
+#[allow(dead_code)]
+impl Solution {
     // pub fn sort_colors(nums: &mut Vec<i32>) {
     //     let mut zero = 0;
     //     let mut one = 0;
@@ -81,19 +81,16 @@
                 i += 1;
             }
         }
-
     }
 }
- 
- // submission codes end
- 
- #[cfg(test)]
- mod tests {
+
+// submission codes end
+
+#[cfg(test)]
+mod tests {
     #[allow(unused_imports)]
-     use super::*;
- 
-     #[test]
-     fn test_75() {
-     }
- }
- 
+    use super::*;
+
+    #[test]
+    fn test_75() {}
+}

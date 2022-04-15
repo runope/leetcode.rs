@@ -4,7 +4,6 @@ use reqwest;
 use serde_derive::{Deserialize, Serialize};
 use serde_json::{self, json, Value};
 
-
 const PROBLEMS_URL: &str = "https://leetcode.com/api/problems/algorithms/";
 const GRAPHQL_URL: &str = "https://leetcode.com/graphql";
 const QUESTION_QUERY_STRING: &str = r#"
